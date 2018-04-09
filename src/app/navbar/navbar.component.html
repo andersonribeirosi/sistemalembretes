@@ -1,0 +1,41 @@
+<!--
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" [routerLink]="['/']">Painel Adm</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/']"> Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/add-item']"> Cadastrar Lembretes <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Sobre</a>
+      </li>
+
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Busca" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Submit</button>
+    </form>
+  </div>
+</nav> -->
+
+<!-- *ngIf="mostrarMenu" -->
+<nav >
+  <div class="nav-wrapper black">
+    <a class="brand-logo center" style="width:auto; height:auto ">Gerenciador de Lembretes</a>
+    <button style="background-color:orangered"[routerLink]="['/login-app']" class="btn btn-lg danger"><strong>LogOut</strong></button>
+  </div>
+
+</nav>
+<div class="container">
+  <app-add-item></app-add-item>
+  <app-itens></app-itens>
+</div>
+
+<app-footer></app-footer>

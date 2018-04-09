@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-content">
+    <span class="card-title"><strong> Adicionar Lembrete</strong></span>
+    <form (ngSubmit)="onSubmit()" class="col s6">
+      <div class="row">
+        <div class="input-field col s6">
+          <input type="text" placeholder="Adicione um título"
+          [(ngModel)]="item.title" name="title" required>
+          <!-- <label>Título</label> -->
+        </div>
+        <div class="input-field col s6">
+          <input type="text" placeholder="Adicione uma descrição"
+          [(ngModel)]="item.descricao" name="descrição">
+          <!-- <label>Descrição</label> -->
+        </div>
+        <input type="submit" value="Adicionar" class="btn">
+      </div>
+
+
+    </form>
+  </div>
+</div>
+

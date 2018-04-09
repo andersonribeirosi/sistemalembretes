@@ -1,0 +1,39 @@
+<div *ngIf="itens?.length > 0; else noItens">
+  <h5 style="text-align: center;padding-top:20px;">Lista de Lembretes</h5>
+  <br>
+  <ul *ngFor="let item of itens" class="collection">
+    <li class="collection-item">
+      <strong>Lembrete:  </strong>{{item.title}} <br> <strong>Descrição: </strong> {{item.descricao}}
+      <a routerLink="['/navbar']" class="secondary-content">
+        <i (click)="editItem($event, item)" class="fa fa-pencil"></i>
+        <i *ngIf="editEstado && itemEdit.id == item.id" (click)="limparEstado()" class="fa fa-compress" ></i>
+      </a>
+
+      <div *ngIf="editEstado && itemEdit.id == item.id">
+        <form (ngSubmit)="updateItem(item)">
+
+          <div class="row">
+            <div class="input-field col s6">
+              <input type="text" placeholder="Adicione um título" [(ngModel)]="item.title" name="title">
+              <!-- <label>Título</label> -->
+            </div>
+            <div class="input-field col s6">
+              <input type="text" placeholder="Adicione uma descrição" [(ngModel)]="item.descricao" name="descrição">
+              <!-- <label>Descrição</label> -->
+            </div>
+            <input type="submit" value="Atualizar" class="btn orange">
+            <button (click)="deleteItem($event, item)" class="btn red">Remover</button>
+          </div>
+
+        </form>
+      </div>
+
+    </li>
+
+  </ul>
+</div>
+
+<ng-template #noItens>
+  <hr>
+  <h5 style="text-align:center;"><strong>Lista de Lembretes Vazia</strong></h5>
+</ng-template>
