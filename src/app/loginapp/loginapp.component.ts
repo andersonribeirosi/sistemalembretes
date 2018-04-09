@@ -17,7 +17,6 @@ export class LoginappComponent implements OnInit {
   }
 
   fazerLogin(){
-    // console.log(this.usuario);
     this.auth.fazerLogin(this.usuario);
   }
 }

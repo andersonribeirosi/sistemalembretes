@@ -7,8 +7,6 @@ export class AuthService {
 
   private usuarioAutenticado: boolean = false;
 
-  mostrarMenu = new EventEmitter<boolean>();
-
   constructor(private router: Router) { }
 
   fazerLogin(usuario: Usuario) {
@@ -17,15 +15,13 @@ export class AuthService {
 
       this.usuarioAutenticado = true;
 
-      this.mostrarMenu.emit(true);
       this.router.navigate(['/lembretes']);
     } else {
       this.usuarioAutenticado = false;
-      this.mostrarMenu.emit(false);
     }
 
   }
-  usuarioEstaAutenticado(){
+  usuarioEstaAutenticado() {
     return this.usuarioAutenticado;
   }
 

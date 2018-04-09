@@ -15,11 +15,9 @@
           <div class="row">
             <div class="input-field col s6">
               <input type="text" placeholder="Adicione um título" [(ngModel)]="item.title" name="title">
-              <!-- <label>Título</label> -->
             </div>
             <div class="input-field col s6">
               <input type="text" placeholder="Adicione uma descrição" [(ngModel)]="item.descricao" name="descrição">
-              <!-- <label>Descrição</label> -->
             </div>
             <input type="submit" value="Atualizar" class="btn orange">
             <button (click)="deleteItem($event, item)" class="btn red">Remover</button>

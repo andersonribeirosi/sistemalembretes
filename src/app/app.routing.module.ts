@@ -10,7 +10,6 @@ import { AuthGuard } from "./guards/auth.guard";
 const APP_ROUTES: Routes = [
 
   { path: '', redirectTo: 'login-app', pathMatch: 'full' },
-  // { path: 'login', component: LoginFormComponent  },
   {
     path: 'lembretes', component: NavbarComponent,
     canActivate: [AuthGuard]
